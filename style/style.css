@@ -5,7 +5,7 @@
 :root {
   --primary-color: #003da5;
   --second-color: #dc1c2e;
-  --bg-color: #fafafa;
+  --bg-color: #e6e9f7;
 }
 /*reset*/
 * {
@@ -24,6 +24,7 @@
   justify-content: space-around;
   align-items: center;
   border-top: 4px solid var(--second-color);
+  padding: 10px 0;
 }
 
 .logo {
@@ -44,7 +45,6 @@
 .logo small {
   color: var(--second-color);
   font-weight: 500;
-  margin-bottom: 10px;
 }
 
 .header nav {
