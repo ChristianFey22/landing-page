@@ -4,20 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing-Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
     <header class="header">
-      <div class="logo">
-        <a href="#">Christian Fey</a>
-        <small>Corredor Inmobiliario</small>
-      </div>
+      <a href="#" class="logo">
+        <p>Christian Fey</p>
+        <span></span>
+        <small>Desarrollador FullStack</small>
+      </a>
       <nav class="navbar">
-        <a href="#">Inicio</a>
-        <a href="#">Sobre Mí</a>
-        <a href="#">Propiedades</a>
-        <a href="#">Contacto</a>
+        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="toggle-menu" />
+        <ul class="navbar-list">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#service">Servicios</a></li>
+          <li><a href="#proyects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
       </nav>
     </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-info">
+          <h1>Te ayudo a crea el sitio web perfecto para tu negocio.</h1>
+          <p>
+            Desarrollo sitios y aplicaciones para plataformas Web. Te ayudo a
+            construir tu proyecto de principio a fin.
+          </p>
+          <div class="hero-btns">
+            <a class="btn btn-primary" href="#contacto">CONTACTAME</a>
+            <a class="btn btn-secondary" href="#proyectos">Proyectos</a>
+          </div>
+        </div>
+        <img src="./assets/hero-image.png" alt="Imagen principal del sitio." />
+      </section>
+      <section id="service" class="servicios">
+        <h2>¿Qué te Ofrezco?</h2>
+        <p>
+          ¡Hola! Soy Christian Fey, soy un desarrollador web apasionado por
+          crear sitios web y aplicaciones web que
+          <span>te ayuden a alcanzar tus objetivos de negocio.</span> Al
+          elegirme, obtendrás +3 años de experiencia, un compromiso con la
+          calidad y la satisfacción del cliente, y la pasión por crear
+          soluciones innovadoras que
+          <span>impacten positivamente en tu negocio.</span>
+        </p>
+      </section>
+    </main>
   </body>
 </html>

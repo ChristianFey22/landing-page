@@ -1,30 +1,85 @@
-/*tipografia*/
+/*****************************************************/
+/*******************TIPOGRAFIA************************/
+/*****************************************************/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/*variables*/
+/*****************************************************/
+/*******************VARIABLES*************************/
+/*****************************************************/
+
 :root {
   --primary-color: #003da5;
   --second-color: #dc1c2e;
   --bg-color: #e6e9f7;
+
+  --font: "Poppins", sans-serif;
+
+  --max-width: 1200px;
+
+  --header-height: 4rem;
 }
-/*reset*/
+
+/*****************************************************/
+/*******************RESET*****************************/
+/*****************************************************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font);
+  scroll-behavior: smooth;
 }
 
-/*header*/
+body {
+  overflow-x: hidden;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* img {
+  max-width: 100%;
+  height: auto;
+} */
+
+/*****************************************************/
+/*******************HEADER****************************/
+/*****************************************************/
 
 .header {
-  background-color: var(--bg-color);
+  background-image: linear-gradient(
+    to bottom,
+    #e6e9f7,
+    #edeef9,
+    #f4f4fb,
+    #faf9fd,
+    #ffffff
+  );
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border-top: 4px solid var(--second-color);
-  padding: 10px 0;
+  border-top: 2px solid var(--second-color);
+  padding: 0.5rem 3rem;
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
 }
 
 .logo {
@@ -34,12 +89,15 @@
   justify-content: center;
 }
 
-.logo a {
-  font-size: 24px;
+.logo p {
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 10px;
   color: var(--primary-color);
-  border-bottom: 2px solid var(--second-color);
+}
+
+.logo span {
+  border: 1px solid var(--second-color);
+  width: 100%;
 }
 
 .logo small {
@@ -50,14 +108,159 @@
 .header nav {
   display: flex;
   gap: 50px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.navbar a {
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+ul li a {
   color: var(--primary-color);
 }
 
-.navbar a:hover {
-  border-bottom: 2px solid var(--second-color);
+.navbar i {
+  font-size: 2rem;
+  display: none;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+/*****************************************************/
+/**************SECTION HERO***************************/
+/*****************************************************/
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  background-color: #ffffff;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero-info p {
+  color: var(--second-color);
+  font-size: 1.2rem;
+}
+
+.hero img {
+  width: 55%;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  font: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.btn-secondary {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+/*****************************************************/
+/************SECTION SERVICIOS************************/
+/*****************************************************/
+
+.servicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  gap: 3rem;
+  height: 100vh;
+}
+
+.servicios p {
+  letter-spacing: 2px;
+  width: 70%;
+  text-align: center;
+  color: var(--second-color);
+  font-size: 1.2rem;
+}
+
+.servicios p span {
+  font-weight: bold;
+}
+
+/*****************************************************/
+/************MEDIA QUERIES************************/
+/*****************************************************/
+
+@media (max-width: 992px) {
+  .navbar ul {
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    font-size: 1rem;
+  }
+
+  .navbar i {
+    display: block;
+  }
+
+  #toggle-menu:checked ~ .navbar-list {
+    display: flex;
+  }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .hero-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .servicios p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 8px 1rem;
+  }
+
+  .hero {
+    padding: 0 1rem;
+  }
+  .hero img {
+    display: none;
+  }
+
+  .servicios {
+    padding: 0 1rem;
+  }
 }
