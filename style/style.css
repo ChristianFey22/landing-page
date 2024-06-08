@@ -234,6 +234,7 @@ ul li a {
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
+    margin: 2rem 1rem;
   }
 
   .hero-info {
@@ -244,6 +245,10 @@ ul li a {
   .hero img {
     width: 100%;
   }
+
+  .servicios {
+    margin: 2rem 1rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -252,7 +257,7 @@ ul li a {
   }
 
   .hero {
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     height: 80vh;
   }
 
