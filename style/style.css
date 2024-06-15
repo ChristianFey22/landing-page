@@ -17,7 +17,7 @@
 
   --max-width: 1200px;
 
-  --header-height: 4rem;
+  --header-height: 5rem;
 }
 
 /*****************************************************/
@@ -208,24 +208,51 @@ ul li a {
 
 @media (max-width: 992px) {
   .navbar ul {
-    background-color: #fff;
+    background-color: #eeeeee;
     width: 100%;
-    height: calc(100vh - var(--header-height));
     position: absolute;
     top: var(--header-height);
     left: 0;
     flex-direction: column;
     align-items: center;
-    display: none;
     font-size: 1rem;
+    transform: translateX(200%);
+    transition: all 0.4s ease;
+    padding: 0.5rem;
   }
 
-  .navbar i {
-    display: block;
+  .bars-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+  }
+
+  .bars-menu span {
+    height: 2px;
+    width: 30px;
+    background-color: var(--second-color);
+    transition: transform 0.3s;
+  }
+
+  #toggle-menu:checked ~ .bars-menu span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  #toggle-menu:checked ~ .bars-menu span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #toggle-menu:checked ~ .bars-menu span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    transform: rotate(225deg);
   }
 
   #toggle-menu:checked ~ .navbar-list {
-    display: flex;
+    transform: translateX(0);
   }
   .hero {
     flex-direction: column;
@@ -264,7 +291,7 @@ ul li a {
   }
 }
 
-@media (max-width: 486px) {
+@media (max-width: 466px) {
   .hero svg,
   .servicios svg {
     display: none;
