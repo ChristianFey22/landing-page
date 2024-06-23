@@ -10,7 +10,7 @@
 
 :root {
   --second-color: #222831;
-  --primary-color: #393e46;
+  --primary-color: rgb(57, 62, 70);
   --bg-color: #00adb5;
 
   --font: "Poppins", sans-serif;
@@ -29,6 +29,7 @@
   box-sizing: border-box;
   font-family: var(--font);
   scroll-behavior: smooth;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -38,10 +39,8 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 a {
@@ -71,7 +70,7 @@ svg {
 /*****************************************************/
 
 .header {
-  background-color: #eeeeee;
+  background-color: #eeeeeee4;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -136,45 +135,34 @@ ul li a {
 /*****************************************************/
 
 .hero {
-  height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
-  max-width: var(--max-width);
-  gap: 1rem;
+  gap: 100px;
+  padding: 100px 0;
 }
 
 .hero-info {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 30px;
 }
 
 .hero-info p {
   color: var(--second-color);
-  font-size: 1.2rem;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 1rem;
+  font-size: 18px;
 }
 
 .btn {
-  font: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: 10px;
 }
 
 .btn-primary {
   background-color: var(--primary-color);
   color: var(--bg-color);
-}
-
-.btn-secondary {
-  color: var(--second-color);
-  border: 1px solid #eeeeee;
+  width: 200px;
+  text-align: center;
 }
 
 /*****************************************************/
@@ -185,21 +173,77 @@ ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
-  gap: 3rem;
-  height: 100vh;
-  max-width: var(--max-width);
+  justify-content: center;
+  gap: 30px;
+  padding: 100px 0;
+}
+
+.servicios h2 {
+  text-align: center;
 }
 
 .servicios p {
   letter-spacing: 2px;
   text-align: center;
   color: var(--second-color);
-  font-size: 1.2rem;
+  font-size: 18px;
 }
 
 .servicios p span {
   font-weight: bold;
+}
+
+/*****************************************************/
+/************SECTION CARDS************************/
+/*****************************************************/
+
+.section-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 100px 0;
+}
+
+.section-cards h2 {
+  text-align: center;
+}
+
+.section-cards p {
+  color: var(--second-color);
+  font-size: 18px;
+  text-align: center;
+}
+
+.section-cards .cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border-radius: 20px;
+  gap: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(238, 238, 238, 0.773);
+}
+
+.card i {
+  font-size: 24px;
+  color: var(--second-color);
+}
+
+.card h3 {
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 18px;
+  text-align: center;
+  color: var(--second-color);
 }
 
 /*****************************************************/
@@ -208,17 +252,20 @@ ul li a {
 
 @media (max-width: 992px) {
   .navbar ul {
-    background-color: #eeeeee;
+    background-color: #eeeeeee4;
     width: 100%;
     position: absolute;
     top: var(--header-height);
     left: 0;
     flex-direction: column;
     align-items: center;
-    font-size: 1rem;
     transform: translateX(200%);
     transition: all 0.4s ease;
     padding: 0.5rem;
+    border-bottom: 2px solid #222831;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 5;
   }
 
   .bars-menu {
@@ -256,9 +303,7 @@ ul li a {
   }
   .hero {
     flex-direction: column;
-    justify-content: center;
-    gap: 4rem;
-    margin: 2rem 1rem;
+    padding: 50px;
   }
 
   .hero-info {
@@ -266,34 +311,19 @@ ul li a {
     text-align: center;
   }
 
-  .servicios {
-    margin: 2rem 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .header {
-    padding: 8px 1rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-    height: 80vh;
+  .hero svg {
+    width: 400px;
   }
 
   .servicios {
-    padding: 0 1rem;
-    height: 80vh;
+    padding: 50px;
   }
 
-  .servicios h2 {
-    text-align: center;
+  .section-cards {
+    padding: 50px;
   }
-}
 
-@media (max-width: 466px) {
-  .hero svg,
-  .servicios svg {
-    display: none;
+  .cards {
+    flex-direction: column;
   }
 }

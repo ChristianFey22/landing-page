@@ -1,0 +1,17 @@
+/* Overlay*/
+.overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  z-index: 1;
+
+  backdrop-filter: blur(2px);
+
+  display: none;
+}
+
+#toggle-menu:checked ~ .overlay {
+  display: block;
+}
