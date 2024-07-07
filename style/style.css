@@ -245,6 +245,94 @@ ul li a {
   text-align: center;
   color: var(--second-color);
 }
+/*****************************************************/
+/************section contacto************************/
+/*****************************************************/
+
+.contacto {
+  padding: 100px 0;
+}
+
+.contacto h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.info-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.ubi-redes {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.ubicacion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.redes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-redes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link-redes a i {
+  font-size: 24px;
+  color: var(--second-color);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.formulario input {
+  width: 300px;
+}
+
+.formulario textarea {
+  width: 300px;
+  height: 200px;
+}
+
+input:focus {
+  border: 1px solid #222831;
+}
+
+/*****************************************************/
+/************FOOTER************************/
+/*****************************************************/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-color: #eeeeeee4;
+}
 
 /*****************************************************/
 /************MEDIA QUERIES************************/
@@ -325,5 +413,11 @@ ul li a {
 
   .cards {
     flex-direction: column;
+  }
+
+  .info-contacto {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
